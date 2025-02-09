@@ -2,7 +2,7 @@ services:
   - type: web
     name: financial-portfolio
     runtime: python
-    buildCommand: "./build.sh"  # Ensure this matches the file name
+    buildCommand: "./build.sh"
     startCommand: "gunicorn financial_portfolio.wsgi:application"
     envVars:
       - key: DATABASE_URL
