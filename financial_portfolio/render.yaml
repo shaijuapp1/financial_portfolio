@@ -1,10 +1,8 @@
-# render.yaml
-
 services:
   - type: web
     name: financial-portfolio
     runtime: python
-    buildCommand: "./build.sh"
+    buildCommand: "./build.sh"  # Ensure this matches the file name
     startCommand: "gunicorn financial_portfolio.wsgi:application"
     envVars:
       - key: DATABASE_URL
