@@ -82,13 +82,24 @@ WSGI_APPLICATION = 'financial_portfolio.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'financial_portfolio',
+#         'USER': '`postgres`',
+#         'PASSWORD': 'yourpassword',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'financial_portfolio',
-        'USER': 'postgres',
-        'PASSWORD': 'yourpassword',
-        'HOST': 'localhost',
+        'USER': '`financial_portfolio_user`',
+        'PASSWORD': 'MvDwtRKxK5vU1tv0mFWeLpNcYrxpqbXo',
+        'HOST': 'dpg-cukh1vt6l47c73cbtnh0-a',
         'PORT': '5432',
     }
 }
