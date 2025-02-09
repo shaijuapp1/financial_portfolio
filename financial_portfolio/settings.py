@@ -99,7 +99,7 @@ DATABASES = {
         'NAME': 'financial_portfolio',
         'USER': '`financial_portfolio_user`',
         'PASSWORD': 'MvDwtRKxK5vU1tv0mFWeLpNcYrxpqbXo',
-        'HOST': 'dpg-cukh1vt6l47c73cbtnh0-a',
+        'HOST': 'postgresql://financial_portfolio_user:MvDwtRKxK5vU1tv0mFWeLpNcYrxpqbXo@dpg-cukh1vt6l47c73cbtnh0-a/financial_portfolio',
         'PORT': '5432',
     }
 }
