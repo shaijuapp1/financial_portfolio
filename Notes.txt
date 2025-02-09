@@ -1,0 +1,72 @@
+
+python Django create a financial portfolio web application with login and portfolip page
+with the following fields 
+    userid as user id
+    financialInstitution as drip down 
+    Currency as drop down 
+    Asset  as drop down
+    Title single line of text	
+    Rate as float	
+    MaturityDate as date	
+    Amount as float
+development envionment in mac m1 pc and with Postgres database
+admin portal with user and data management
+develupment envionment in mac m1 pc and with postgress data base 
+user login page
+once user logs in can view only users portfolio
+Also Excel upload funtionality to upload portfolio
+In portfoilo list report show folloing items
+    financialInstitution
+    Currency
+    Asset
+    Title
+    Rate
+    MaturityDate
+    Amount
+    Amount in AED
+    Amount in INR
+Amount in AED shoud auto calcaute using currency field and get latest AED value 
+Amount in AED shoud auto calcaute using currency field and get latest INR value 
+Portfolio view should be group by financialInstitution and sub total of  Amount, Amount in AED and Amount in INR
+
+Portfolio view should be group by financialInstitution and sub total of  Amount, Amount in AED and Amount in INR. Also show total of Amount, Amount in AED and Amount in INR
+
+and deploy the this in render.com
+
+===========
+
+
+financial_portfolio/                # Root project directory
+├── financial_portfolio/            # Django project directory
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py                 # Django settings
+│   ├── urls.py                     # Main URL configuration
+│   ├── wsgi.py
+│   └── render.yaml                 # Render.com deployment configuration
+├── portfolio/                      # Portfolio app directory
+│   ├── migrations/                 # Database migrations
+│   │   └── __init__.py
+│   ├── templatetags/               # Custom template filters
+│   │   ├── __init__.py
+│   │   └── custom_filters.py       # Custom filters for templates
+│   ├── templates/                  # HTML templates
+│   │   └── registration/
+│   │       ├── login.html          # Login template
+│   │       └── signup.html         # Signup template
+│   │   └── portfolio/
+│   │       ├── base.html           # Base template
+│   │       ├── portfolio_list.html # Portfolio list template
+│   │       └── upload_portfolio.html # Upload portfolio template
+│   ├── __init__.py
+│   ├── admin.py                    # Admin configuration
+│   ├── apps.py
+│   ├── forms.py                    # Forms for portfolio
+│   ├── models.py                   # Portfolio models
+│   ├── tests.py
+│   ├── urls.py                     # App-specific URLs
+│   └── views.py                    # Portfolio views
+├── manage.py                       # Django management script
+├── requirements.txt                # Python dependencies
+├── build.sh                        # Render.com build script
+└── .gitignore                      # Git ignore file

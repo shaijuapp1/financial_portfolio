@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Portfolio List</h1>
+<table>
+    <tr>
+        <th>Financial Institution</th>
+        <th>Currency</th>
+        <th>Asset</th>
+        <th>Title</th>
+        <th>Rate</th>
+        <th>Maturity Date</th>
+        <th>Amount</th>
+        <th>Amount in AED</th>
+        <th>Amount in INR</th>
+    </tr>
+    {% for portfolio in portfolios %}
+    <tr>
+        <td>{{ portfolio.financial_institution }}</td>
+        <td>{{ portfolio.currency }}</td>
+        <td>{{ portfolio.asset }}</td>
+        <td>{{ portfolio.title }}</td>
+        <td>{{ portfolio.rate }}</td>
+        <td>{{ portfolio.maturity_date }}</td>
+        <td>{{ portfolio.amount }}</td>
+        <td>{{ portfolio.amount_in_aed }}</td>
+        <td>{{ portfolio.amount_in_inr }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,63 @@
+<!-- portfolio/templates/portfolio/portfolio_list.html -->
+
+{% extends 'base.html' %}
+{% load custom_filters %}
+
+{% block content %}
+<h1>Portfolio List</h1>
+
+{% for institution, portfolios in grouped_portfolios.items %}
+<h2>{{ institution }}</h2>
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <th>Currency</th>
+            <th>Asset</th>
+            <th>Title</th>
+            <th>Rate</th>
+            <th>Maturity Date</th>
+            <th>Amount</th>
+            <th>Amount in AED</th>
+            <th>Amount in INR</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for portfolio in portfolios %}
+        <tr>
+            <td>{{ portfolio.currency }}</td>
+            <td>{{ portfolio.asset }}</td>
+            <td>{{ portfolio.title }}</td>
+            <td>{{ portfolio.rate }}</td>
+            <td>{{ portfolio.maturity_date }}</td>
+            <td>{{ portfolio.amount }}</td>
+            <td>{{ portfolio.amount_in_aed }}</td>
+            <td>{{ portfolio.amount_in_inr }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5"><strong>Subtotal for {{ institution }}</strong></td>
+            <td><strong>{{ subtotals|get_item:institution|get_item:'amount' }}</strong></td>
+            <td><strong>{{ subtotals|get_item:institution|get_item:'amount_aed' }}</strong></td>
+            <td><strong>{{ subtotals|get_item:institution|get_item:'amount_inr' }}</strong></td>
+        </tr>
+    </tfoot>
+</table>
+<br>
+{% endfor %}
+
+<h2>Totals</h2>
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Total Amount</th>
+        <th>Total Amount in AED</th>
+        <th>Total Amount in INR</th>
+    </tr>
+    <tr>
+        <td>{{ total_amount }}</td>
+        <td>{{ total_amount_aed }}</td>
+        <td>{{ total_amount_inr }}</td>
+    </tr>
+</table>
+{% endblock %}
