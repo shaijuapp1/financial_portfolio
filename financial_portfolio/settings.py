@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -93,15 +95,13 @@ WSGI_APPLICATION = 'financial_portfolio.wsgi.application'
 #     }
 # }
 
+# Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'financial_portfolio',
-        'USER': '`financial_portfolio_user`',
-        'PASSWORD': 'MvDwtRKxK5vU1tv0mFWeLpNcYrxpqbXo',
-        'HOST': 'postgresql://financial_portfolio_user:MvDwtRKxK5vU1tv0mFWeLpNcYrxpqbXo@dpg-cukh1vt6l47c73cbtnh0-a/financial_portfolio',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://financial_portfolio_user:MvDwtRKxK5vU1tv0mFWeLpNcYrxpqbXo@dpg-cukh1vt6l47c73cbtnh0-a/financial_portfolio',
+        conn_max_age=600
+    )
 }
 
 
